@@ -1,57 +1,38 @@
-# Pull Request Checklist
+# Pull Request Guidelines
 
-## 🧠 For All Contributors
+## Relevant links
 
-- [ ] My code follows the Angular Style Guide.
-- [ ] I ran `eslint` and `prettier` locally and fixed all issues.
-- [ ] I added or updated tests for any logic I introduced.
-- [ ] All new public APIs are documented with JSDoc.
-- [ ] I manually tested the UI and verified it behaves as expected.
+## Description
 
----
+## Mandatory
 
-## 🧑‍🎓 For Junior Developers
-
-- [ ] I avoided using `any` unless strictly necessary.
-- [ ] I followed naming conventions for files and selectors.
-- [ ] My component inputs/outputs are typed and validated.
-
----
-
-## 🧑‍💻 For Mid-Level Developers
-
-- [ ] I followed SOLID principles in new code.
-- [ ] I used `trackBy` in `*ngFor` where applicable.
-- [ ] I applied the `OnPush` change detection strategy where appropriate.
-- [ ] I ensured lazy loading for new modules if needed.
-- [ ] I wrote integration tests for business logic changes.
+- [ ] Good naming convention(Names are written in english, have no typos and state clearly their purpose)
+- [ ] No duplication of code
+- [ ] No magic entities
+- [ ] Clean translation files: no links, no HTML, etc
+- [ ] No console.log or debugging tools in code
+- [ ] Code has no comments
+- [ ] Use readonly for immutable properties
+- [ ] Employ TypeScript generics to broaden the flexibility of methods
+- [ ] Functions, classes and interfaces are fully typed(i.e., don't use any)
+- [ ] Single Responsibility Principle
 
 ---
 
-## 👨‍🏫 For Senior Developers
+## Desirable
 
-- [ ] I reviewed architecture for consistency with clean/hexagonal patterns.
-- [ ] I validated bundle size impact using source-map explorer.
-- [ ] I used feature flags or toggle strategies for risky changes.
-- [ ] I checked for security vulnerabilities (e.g., via `npm audit`).
-- [ ] I reviewed dependency changes and verified upgrade safety.
-
----
-
-## 🧪 Tests
-
-- [ ] `ng test` passes with no failures.
-- [ ] Code coverage is above threshold or justified.
+- [ ] Angular entities(services, components, pipes etc) follow single responsibility
+- [ ] Clear separation between presentation, domain and data layers
+- [ ] Pure functions whenever possible
+- [ ] Aim for low cyclomatic complexity
+- [ ] Efficient use of iterators
+- [ ] Use the async pipe whenever possible and, when not, manually unsubscribe on ngOnDestroy
+- [ ] Use JSDoc(https://jsdoc.app/about-getting-started) when inserting new methods into services lib
+- [ ] Use track with @for and trackBy with *ngFor to minimize re-rendering(https://angular.dev/api/core/@for#track-and-objects-identity)
 
 ---
 
-## 📝 Description
+## Tests
 
-<!-- Write a short summary of your changes and the motivation behind them. Link issues when possible -->
-
----
-
-## 🔍 Related Issues
-
-Closes #  
-Fixes #  
+- [ ] `npm run test` passes with no failures.
+- [ ] Coverage of new code is above 80%
